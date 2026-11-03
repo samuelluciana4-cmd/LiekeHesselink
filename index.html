@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Speciaal voor jou ✨</title>
+<style>
+:root{color-scheme:dark;--gold:#d6b879;--cream:#f8f0df}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#29231e 0%,#101014 48%,#070709 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;display:grid;place-items:center;padding:24px;overflow-x:hidden}body:before{content:'';position:fixed;inset:18px;border:1px solid #d6b87940;pointer-events:none}.card{width:min(100%,660px);text-align:center;padding:58px 28px 48px;border:1px solid #d6b87965;background:#141316dd;box-shadow:0 22px 80px #0009;position:relative}.eyebrow{color:var(--gold);letter-spacing:.35em;text-transform:uppercase;font:12px Arial,sans-serif}h1{font-size:clamp(36px,7vw,60px);font-weight:400;line-height:1.15;margin:22px 0}p{line-height:1.8;color:#ddd0bd}.ornament{color:var(--gold);font-size:26px;margin:18px 0}label{display:block;margin:30px 0 12px;color:#e4d2af;font:13px Arial,sans-serif;letter-spacing:.08em}input{width:min(100%,340px);padding:16px;background:#09090b;border:1px solid #ae925d;color:white;text-align:center;font-size:17px;outline:none;border-radius:0}input:focus{border-color:#f3d69b}button{display:block;margin:22px auto 0;padding:16px 30px;border:1px solid var(--gold);background:var(--gold);color:#17130d;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;font:12px Arial,sans-serif;transition:.2s}button:hover{background:#f3d69b;transform:translateY(-2px)}.hint{font-size:13px;font-style:italic;color:#bca98d;margin-top:15px}.error{color:#ffb9b9;min-height:24px;font-size:14px}.hidden{display:none}.letter{text-align:left;white-space:pre-line;font-size:18px;line-height:2;max-width:510px;margin:32px auto;color:#f4e9d5}.fade{animation:fade .9s ease both}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.sparkle{position:fixed;color:#d6b87999;pointer-events:none;animation:float 8s linear infinite}@keyframes float{from{transform:translateY(105vh);opacity:0}20%{opacity:1}to{transform:translateY(-10vh);opacity:0}}@media(max-width:480px){.card{padding:44px 20px}.letter{font-size:16px}}
+</style>
+</head>
+<body>
+<main class="card">
+<section id="lock" class="fade">
+<div class="eyebrow">Een klein geheim</div><div class="ornament">✧</div>
+<h1>Alleen voor jou</h1>
+<p>Voor mijn favoriete loser<br>Maar eerst moet je het geheime woord raden.</p>
+<form id="form"><label for="password">HET GEHEIME WACHTWOORD</label><input id="password" type="password" autocomplete="off" required placeholder="Typ het wachtwoord…"><div class="hint">Tip: de laatste film die we samen hebben gezien 🎬</div><button type="submit">Open je verrassing ✨</button><div id="error" class="error" aria-live="polite"></div></form>
+</section>
+<section id="reveal" class="hidden">
+<div class="eyebrow">Een brief speciaal voor jou</div><div class="ornament">✧</div><h1>Gefeliciteerd ♡</h1>
+<div class="letter" id="letter">Hai Liek,
+
+Vandaag ken ik je over een week precies drie jaar. Wat gaat de tijd toch snel. Nog steeds ben ik dankbaar dat Almelo zo’n pauperstad is en dat mijn fiets destijds is gestolen. Anders hadden we elkaar misschien nooit leren kennen.
+
+Na die drie jaar snap ik oprecht soms niet hoe het kan dat jij nog steeds in mijn leven bent. Ik zal je even een lijstje geven:
+
+- Mick
+- Anton
+- Timo
+- Pim
+
+Dat zijn mijn beste vrienden. En weet je wat ze allemaal gemeen hebben? Ik ken ze inmiddels al 22 jaar. Je zou dus kunnen zeggen dat ik een ontzettend hechte vriendengroep heb, maar je zou ook kunnen zeggen dat ik het blijkbaar niet zo makkelijk vind om nieuwe mensen echt dichtbij te laten komen.
+
+En misschien is dat juist wat ik zo bijzonder vind aan jou. Voor het eerst in lange tijd voelt het alsof ik iemand aan dat lijstje kan toevoegen. Iemand van wie ik niet had verwacht dat die zo’n belangrijke plek in mijn leven zou krijgen. Samen met nog een andere meid natuurlijk… de enige echte Luna, die inmiddels misschien nog wel betere knuffels geeft dan jij. Haha.
+
+Wat ik eigenlijk probeer te zeggen, is dat sommige mensen op een heel onverwacht moment je leven binnenwandelen en vervolgens een plek innemen waarvan je niet eens wist dat die nog vrij was. En jij bent zo iemand.
+
+Zolang jij er voor mij bent, zal ik er ook altijd voor jou zijn. Ik hoop dat je dat nooit vergeet. Ik zal jou niet vergeten, al is het maar de vraag of mijn geheugen me daarin gaat helpen tot de dag dat ik dement word.
+
+Als ik bij jou ben, heb ik hetzelfde gevoel als wanneer ik op het voetbalveld sta. Alsof de rest van de wereld even niet bestaat. Alsof de tijd stilstaat en ik nergens anders hoef te zijn dan precies daar, op dat moment.
+
+En misschien is dat uiteindelijk wel een van de mooiste dingen die iemand je kan geven: het gevoel dat je even nergens anders hoeft te zijn.
+
+Zou je eigenlijk ooit gedacht hebben dat een gestolen fiets zoveel geluk kon opleveren?</div>
+<div class="ornament">✧</div>
+</section>
+</main>
+<script>
+// Let op: dit is een verrassingsslot, geen echte beveiliging.
+const form=document.getElementById('form');
+form.addEventListener('submit',e=>{e.preventDefault();const guess=document.getElementById('password').value.trim();if(guess.toLowerCase()==='obsession'){document.getElementById('lock').classList.add('hidden');const reveal=document.getElementById('reveal');reveal.classList.remove('hidden');reveal.classList.add('fade');for(let i=0;i<24;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=i%3===0?'✦':'✧';s.style.left=Math.random()*100+'vw';s.style.animationDelay=-Math.random()*8+'s';s.style.animationDuration=6+Math.random()*6+'s';document.body.appendChild(s)}}else{document.getElementById('error').textContent='loser ben je het nu al vergeten?';}});
+</script>
+</body>
+</html>
